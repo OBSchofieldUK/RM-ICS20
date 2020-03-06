@@ -1,0 +1,5 @@
+sudo apt-get install ros-melodic-mavlink ros-melodic-mavros ros-melodic-mavros-extras ros-melodic-mavros-msgs -y 
+pip install utm requests --user 
+
+cd /opt/ros/melodic/lib/mavros
+sudo ./install_geographiclib_datasets.sh
