@@ -4,7 +4,6 @@ The drone framework is the backbone of the autonomous operations on the UAV.
 This folder is split up into three parts:
 
 - root_framework, the core framework, including droneCore, messageHandler, and userInput
-- 
 - secondary pilots, which are responsible for an individual operation (loiter, examplePilot)
 - peripheralControl - this includes the conversion script to format the gazeboSim 360-degree rangefinder into a LeddarTech VU8 8-segment LiDAR.
 
@@ -26,23 +25,23 @@ To control, click into the keypressNode terminal and input the keys shown below
 
 | Keypress | Action |
 |:-----:|:--------|
-|t |	takeoff + offboard + loiter mode |
-|o | 	offboard + loiter (useful if something stops during operation) |
-|l |	enable loiter |
-|wasd |	Loiterpilot: forwards, back, left, right |
-|qe |	Loiterpilot: yaw ccw/cw (respectively) |
-|zx |	decrease/increase altitude |
-|r |	move drone to powerline set (fancy model) |
-|f |	move drone to single powerline (accurate line thickness) |
-|h |	move the drone to hover above "home" at 7.5m altitude |
+|t | takeoff + offboard + loiter mode |
+|o | offboard + loiter (useful if something stops during operation) |
+|l | enable loiter |
+|wasd | Loiterpilot: forwards, back, left, right |
+|qe | Loiterpilot: yaw ccw/cw (respectively) |
+|zx | decrease/increase altitude |
+|r | move drone to powerline set (fancy model) |
+|f | move drone to single powerline (accurate line thickness) |
+|h | move the drone to hover above "home" at 7.5m altitude |
 
-
-### LoiterMode
+<!--### LoiterMode
 
 Whilst in loiter mode, you can use the keyboard controls to move the the drone 
 `wasd`  for XY moves
 `zx`    for up/down
 `qe`    for rotation
+-->
 
 ### messageControl
 
