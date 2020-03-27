@@ -11,8 +11,7 @@
     <arg name="Y" default="1.5707"/>
     <!-- vehicle model and world -->
     <arg name="est" default="ekf2"/>
-    <!-- <arg name="vehicle" default="d4e_DevelDroneV1"/> -->
-    <arg name="vehicle" default="iROS_UAV_complete"/>
+    <arg name="vehicle" default="iris_vu8lidars"/>
     <!-- <arg name="vehicle" default="iris_opt_flow"/> -->
     <arg name="world" default="$(find mavlink_sitl_gazebo)/worlds/d4e_environment1.world"/>
     <!-- <arg name="sdf" default="$(find mavlink_sitl_gazebo)/models/$(arg vehicle)/$(arg vehicle).sdf"/> -->

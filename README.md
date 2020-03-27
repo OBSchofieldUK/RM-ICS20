@@ -1,33 +1,56 @@
-# Drones4Energy - Powerline Landing
+# RM-ICS20 Repository
+
+Git Repository for use with Intelligent Collaborative System Design Elective at SDU (spring semester 2020)
+
 Maintainer: Oscar Bowen Schofield (obs@mmmi.sdu.dk)
 
+> Each Folder has its own respective README.md, be sure to check them out before asking questions.
 
-This repo is for the ongoing development of Powerline guidance and Landing under the *Drones4Energy* Project at the University of Southern Denmark, Odense. 
+## Dependencies and Recommended Software
 
-The structure of this repo is as follows: 
-- visionEstimation 
-  - The processing of images to detect powerlines. 
-  - Sensor fusion between image data, IMU and LiDAR data 
-  - Estimating the 3D position of the powerline w.r.t the UAV. 
-- droneFramework 
-  - Backbone of the autonomous system to locate a power pylon within the local vicinity 
-  - Provide basic navigation to a desired waypoints    
-- simulationAssets
-  - Drone and world models needed to run GazeboSim 
-  - Pre-made bash scripts to launch the simulations properly
-- systemDependencies
-  - Packages and files used by both visionEstimation and droneFramework
+Ensure the following are installed:
 
-# Dependencies
-Each folder has its own README which need to be followed for the whole system to work, however the main dependencies are:
+- Ubuntu 16.04/ 18.04 *(18.04 recommended)*
+- [ROS](www.ros.org) Melodic/Kinetic *(Melodic recommended)*
+- [PX4 Firmware](https://github.com/px4/firmware) *(V1.8.2 recommended)*
+- [MAVROS](http://wiki.ros.org/mavros)
+- [python-utm](http://pypi.python.org/pypi/utm)
+- [QGroundControl](http://qgroundcontrol.com/) *(for debugging)*
+- [terminator](https://gnometerminator.blogspot.com/p/introduction.html) *(recommended terminal package, **not explicitly required**)*
 
-1. ROS      (Melodic/Kinetic)
-2. OpenCV   (Tested with V3.3.1)
-3. PX4      (Tested with V1.8.2) 
-4. [eigen3](http://eigen.tuxfamily.org/index.php?title=Main_Page) Library 
-   1. (Ubuntu)-> ```sudo apt-get install libeigen3-dev```
-5. [RapidJSON](https://github.com/Tencent/rapidjson/) library 
-   
-# Getting Started
+### Recommended Folder Structure
 
-#TODO: *update in the near future*
+``` tree
+.
++-- PX4 Firmware
++-- catkin_workspace
+|   +-- startupScripts
+|   +-- src
+|   |   +-- RM-ICS20 Repository
+|   |   +-- **Additional nodes**
+```
+
+## Getting started
+
+### Prerequisite
+
+> Make sure you have followed the [PX4 toolchain installation](https://dev.px4.io/v1.9.0/en/setup/dev_env_linux.html#jmavsimgazebo-simulation) before continuing.
+
+Clone the PX4 Firmware and build the [Gazebo-SITL configuration](https://dev.px4.io/v1.8.2/en/simulation/gazebo.html)
+
+If the firmware builds and runs correctly, you should be able to run ```commander takeoff``` within the psh shell, causing the UAV to take off, then land.
+
+### Installation of Simulation Assets, launch files
+
+From the terminal, run the command
+
+```bash
+./simulationAssets/installAssets.sh /path/to/Firmware/Folder
+```
+
+This will install all the launch scripts, model files and world assets to the correct folders.
+
+- Launch Files -> /Firmware/launch
+
+- Model Files -> /Firmware/Tools/sitl_gazebo/models
+- World Files -> /Firmware/Tools/sitl_gazebo/worlds

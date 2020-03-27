@@ -1,33 +1,28 @@
-# Simulation install and configuration
+# Simulation Assets
 
-To run the PowerLineThesis code within a simulation environment, you will need to set up a PX4 Gazebo environment
+This folder contains:
 
-1. Configure your computer using the PX4 Bash Scripts located [here](https://raw.githubusercontent.com/PX4/Devguide/master/build_scripts/ubuntu_sim_ros_gazebo.sh)
+1. launchFiles - launch files called by the startupScript  ```px4_launch_gazebo.sh```
 
+2. models - pre-prepared iris models that include 8-Segment LiDARs and cameras
+3. worlds - pre-prepared gazebo worlds with power line models
+4. startupScripts - handy scripts to start
 
-1a. If running on Ubuntu 18.04 you will need to change 'kinetic' to 'melodic'
+   1. PX4-SITL with ROS and Gazebo
 
-NB: This will be the same for all scripts in this readme 
+   2. MAVROS for SITL
 
-2. PX4 firware needs to be v1.8.2 (latest stable release)
-3. Test that gazebo/PX4 Simulation works
+## Installation
 
-use the commands below to ensure the 
-    ```Bash
-    git clone https://github.com/PX4/Firmware
-    cd Firmware
-    git checkout v1.8.2
-    make posix_sitl_default gazebo
-    ```
+From the terminal, run the command
 
-If everything builds and is configured correctly, a Gazebo window should appear with a Iris drone. 
-use the command `commander takeoff` within the terminal window to launch the drone.
+```bash
+./installAssets.sh /path/to/Firmware/Folder
+```
 
-# Install Simulation Assets
-run the command `./install_Assets.sh add/path/to/Firmware/folder` to install the simulation assets to your Firmware folder.
+This will install all the launch scripts, model files and world assets to the correct folders as shown below
 
-#running simulation
-use ` ./px4_launch_gazebo.sh` to launch the simulation environment.
-use `./launch_mavROS.sh` to connect mavros to the simuation environment.
+- Launch Files -> /Firmware/launch
 
-To use the droneControl framework, look at the readme in the droneControl Folder
+- Model Files -> /Firmware/Tools/sitl_gazebo/models
+- World Files -> /Firmware/Tools/sitl_gazebo/worlds
